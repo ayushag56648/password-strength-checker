@@ -1,0 +1,5 @@
+{
+    "minimum_zxcvbn_score": 3,
+    "allow_pwned_passwords": false,
+    "max_pwned_count_allowed": 0
+}
