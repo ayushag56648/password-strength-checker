@@ -1,4 +1,4 @@
-# Enterprise Password Security & Auditing Tool
+# Enterprise Password Security & Enforcement Tool
 
 A command-line security utility designed to enforce enterprise-grade password policies. It combines entropy-based strength scoring with privacy-preserving data breach detection and demonstrates secure cryptographic storage.
 

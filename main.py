@@ -1,6 +1,7 @@
 import argparse
 import json
 import sys
+import getpass  # ADD THIS
 from hashing import hash_password
 from breach_check import is_pwned
 from zxcvbn import zxcvbn
@@ -23,13 +24,16 @@ def check_password_strength(password: str) -> dict:
     }
 
 def main():
+    # We keep argparse so the user can still use -h or --help to see instructions
     parser = argparse.ArgumentParser(description="Enterprise Security Policy Enforcement CLI")
-    parser.add_argument("-p", "--password", help="The password to audit", required=True)
     args = parser.parse_args()
 
-    password = args.password
+    # USE GETPASS INSTEAD OF COMMAND LINE ARGUMENTS
+    password = getpass.getpass("🔒 Enter password to securely audit (typing will be hidden): ")
+    
     policy = load_policy()
 
+    # ... (The rest of your code remains exactly the same below this line)
     # 1. Evaluate Password Entropy (Strength)
     strength = check_password_strength(password)
     print(f"Strength score: {strength['score']}/4 (crack time: {strength['crack_time']})")
